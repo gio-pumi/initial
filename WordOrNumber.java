@@ -5,16 +5,23 @@ public class WordOrNumber {
         Scanner scanner = new Scanner(System.in);
 
         String word = scanner.nextLine();
-        double result = 0;
+        Integer resultInt = 0;
+        Float resultDouble ;
         String reversed = "";
 
-        if(word.contains("0") || word.contains("1 ") || word.contains("2") || word.contains("3") || word.contains("4")
+        if(word.contains("0") || word.contains("1") || word.contains("2") || word.contains("3") || word.contains("4")
            || word.contains("5") || word.contains("6") || word.contains("7") || word.contains("8") || word.contains("9")
-         ){
-           result = Double.parseDouble(word) + 1;
-           System.out.printf("%.1f",result);
-        }else
+         )
         {
+            if(word.contains(".")){
+                resultDouble= Float.parseFloat(word) + 1;
+                System.out.printf("%.1f",resultDouble);
+            }else{
+            resultInt = Integer.parseInt(word) + 1;
+            System.out.println(resultInt);
+            }
+        }
+        else {
             for (int i = word.length()-1; i >= 0; i--) {
                 reversed = reversed + word.charAt(i);
             }
