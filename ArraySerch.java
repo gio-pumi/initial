@@ -1,3 +1,5 @@
+
+import java.lang.reflect.Array;
 import java.util.Scanner;
 
 public class ArraySerch {
@@ -16,15 +18,15 @@ public class ArraySerch {
                  if (Integer.parseInt(array1[j] ) == i)
                  {
                      contains = true;
-                 break;
+                     break;
                  }else
                      contains = false;
              }
-
              if (!contains) {
-             result += i +",";
+                 if(result.length() > 0)
+                     result += ",";
+                 result += i;
              }
-
         }
         System.out.println(result);
 }
