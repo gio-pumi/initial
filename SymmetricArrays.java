@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class IsAListSorted {
+public class SymmetricArrays {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -11,25 +11,20 @@ public class IsAListSorted {
 
         for (int i = 0; i < nList ; i++) {
             String input = scanner.nextLine();
-            String[] listArray = input.split(",");
+            String[] listArray = input.split(" ");
 
-            for (int j = 0; j < listArray.length-1; j++) {
-
-                if(Integer.parseInt(listArray[j]) <= Integer.parseInt(listArray[j + 1]))
-                {
-                     tempResult = true;
-                }
-                else{
+            for (int j = 0; j < listArray.length; j++) {
+                if(Integer.parseInt(listArray[j]) == (Integer.parseInt(listArray[listArray.length - 1 - j])))
+                    tempResult = true;
+                else
                     tempResult = false;
-                    break;
-                }
             }
 
             if(tempResult)
-            result += "true \n";
+                result += "Yes\n";
             else
-            result += "false \n";
-        }
+                result += "No\n";
+         }
 
         System.out.println(result);
     }
