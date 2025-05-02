@@ -6,6 +6,9 @@ public class RepeatingNumbers {
 
         Integer nNumbers =Integer.parseInt(scanner.nextLine());
         int[] countArray = new int[11];
+        int max = 0;
+        int minIndex = 11;
+
 
         for (int i = 0; i < nNumbers ; i++) {
             Integer number = Integer.parseInt(scanner.nextLine());
@@ -18,6 +21,12 @@ public class RepeatingNumbers {
 
 
         for (int i = 1; i < countArray.length ; i++) {
+            if(countArray[i] >= max && i < minIndex) {
+                max = countArray[i];
+                minIndex = i;
+            }
         }
+
+        System.out.printf(minIndex+"");
     }
 }
