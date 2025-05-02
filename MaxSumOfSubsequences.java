@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class MaxSumOfSubsequences {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        //your code here
+        //WITHOUT ARRAY
         Integer nList =Integer.parseInt(scanner.nextLine());
         int maxSum = 0;
         int sum = 0;
